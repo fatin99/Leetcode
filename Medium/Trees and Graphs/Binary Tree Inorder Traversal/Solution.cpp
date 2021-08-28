@@ -121,7 +121,6 @@ void print(TreeNode* t, int space = 10) {
 }
 
 int main() {
-    int null = INT_MIN;
     vector<int> input = {1,2,3,4,5,6,7};
     
     TreeNode* start;
