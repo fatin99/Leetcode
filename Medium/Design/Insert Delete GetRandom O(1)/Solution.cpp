@@ -14,7 +14,7 @@ public:
     /** Inserts a value to the set. Returns true if the set did not already contain the specified element. */
     bool insert(int val) {
         if (map.find(val) == map.end()) {
-            map[val] == true;
+            map[val] = true;
             return true;
         } else {
             return false;
