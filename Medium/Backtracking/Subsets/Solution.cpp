@@ -7,7 +7,8 @@ public:
     
     vector<vector<int>> subsets(vector<int>& nums) {
         sort(nums.begin(), nums.end());
-        backtrack({}, nums);
+        //backtrack({}, nums);
+        backtrack2({}, nums, 0);
         return output;
     }
 
@@ -36,11 +37,20 @@ public:
             }
         }
     }
+
+    void backtrack2(vector<int> curr, vector<int> nums, int start){
+        output.push_back(curr);
+        for(int i = start; i < nums.size(); i++){
+            curr.push_back(nums[i]);
+            backtrack2(curr, nums, i+1);
+            curr.pop_back();
+        }
+    }
 };
 
 int main() {
     Solution solution;
-    vector<int> nums = {0};
+    vector<int> nums = {1, 2, 3};
     vector<vector<int>> output = solution.subsets(nums);
     for (int i = 0; i < output.size(); i ++) {
         for (int j = 0; j < output[i].size(); j ++) {
